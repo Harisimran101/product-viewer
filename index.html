@@ -1,29 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/main.js"></script>
-    <link rel="modulepreload" href="/assets/secondary.js">
-    <link rel="stylesheet" href="/assets/index.86f6f73f.css">
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
   </head>
   <body>
-    
-    <canvas id="webgl"></canvas>
-
-    <div class="sidebar">
-      <div class="details-container">
-        <div class="product-thumbnail">
-        <img src="/assets/I will create interactive webgl with three js.037328e1.png">
+    <!-- <model-viewer> HTML element -->
+    <model-viewer bounds="tight" src="iphone.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls environment-image="spruit_sunrise_1k_HDR.hdr" poster="poster.webp" shadow-intensity="1.17" auto-rotate camera-orbit="-387.9deg 86.97deg auto" skybox-image="spruit_sunrise_1k_HDR.hdr" exposure="0.98" shadow-softness="0.84">
+      <button class="Hotspot" slot="hotspot-1" data-position="0.6448234621822143m 1.1038396569878057m 2.297394403539026m" data-normal="-0.00003763415869312282m -0.001130426245939286m -0.9999993603598818m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Main camera</div>
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
       </div>
-      <h1 class="product-heading">THREE JS NFT</h1>
-    </div>
-   </div>
-
-  
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>  
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </body>
 </html>
